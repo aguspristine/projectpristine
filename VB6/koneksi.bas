@@ -113,12 +113,12 @@ Public Function ReadRs2(sql As String)
   Set rs2 = Nothing
   rs2.Open sql, cn, adOpenStatic, adLockReadOnly
 End Function
-'
-'Public Function WriteRs3(sql As String)
-'  Set Rs3 = Nothing
-'  Rs3.OpenRs sql, cn, adOpenStatic, adLockOptimistic
-'End Function
-'
+
+Public Function WriteRs3(sql As String)
+  Set rs3 = Nothing
+  rs3.Open sql, cn, adOpenStatic, adLockOptimistic
+End Function
+
 Public Function ReadRs3(sql As String)
   Set rs3 = Nothing
   rs3.Open sql, cn, adOpenStatic, adLockReadOnly
@@ -128,6 +128,16 @@ Public Function blokTxt(ttx As TextBox)
   ttx.SelStart = 0
   ttx.SelLength = Len(ttx)
   ttx.SetFocus
+End Function
+
+Public Function WriteRs4(sql As String)
+  Set rs4 = Nothing
+  rs4.Open sql, cn, adOpenStatic, adLockOptimistic
+End Function
+
+Public Function ReadRs4(sql As String)
+  Set rs4 = Nothing
+  rs4.Open sql, cn, adOpenStatic, adLockReadOnly
 End Function
 
 'Public Function Search_Text(grd As VSFlexGrid, ttx As TextBox, _
@@ -209,7 +219,6 @@ Dim newKode As String
     End If
     getNewNumberWithDate = Format(tgl, "yyMMdd") & Format(newKode, "0###")
 End Function
-
 Function cekSudahTerdaftarPasien(nRM As String) As String
     ReadRs "select s.namaStatus from registrasi r,statusPulang s where r.nStatusPulang=s.nStatusPulang and nRm='" & nRM & "'"
     If rs.RecordCount = 0 Then
@@ -258,5 +267,19 @@ Dim JamLengkap As String
     Exit Function
   End If
 End Function
-
-
+Function getNewNumberWithDate1(tableName As String, fieldName As String, fieldTanggal As String, keys As String, tgl As Date) As String
+Dim newKode As String
+    ReadRs "select count(" & fieldName & ") from " & tableName & " where " & fieldTanggal & " = '" & Format_tgl(tgl) & "'"
+    If rs.RecordCount <> 0 Then
+        newKode = keys & (Val(rs(0)) + 1)
+    End If
+    getNewNumberWithDate1 = Format(tgl, "yyMMdd") & Format(newKode, "0###")
+End Function
+Function cekSTokRuangan(nBarang As String, nRuangan As String) As String
+    ReadRs "select sum(qtystok) as qtystok from transaksistok where nBarang = '" & nBarang & "' and nRuangan= '" & nRuangan & "' and visible='1'"
+    If rs.RecordCount = 0 Then
+        cekSudahTerdaftarPasien = "Data Belum Teregistrasi"
+    Else
+        cekSudahTerdaftarPasien = rs!qtystok
+    End If
+End Function
