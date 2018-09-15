@@ -1,7 +1,7 @@
 koneksi = 104, 104, 991, 546, C
 frmSettingKoneksi = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmMaster = 0, 0, 0, 0, C, 0, 0, 0, 0, C
-MDIForm1 = 26, 26, 913, 468, , 52, 52, 939, 494, C
+MDIForm1 = 26, 26, 913, 468, Z, 52, 52, 939, 494, C
 frmListTable = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmDesain = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 publicVar = 0, 0, 0, 0, C
@@ -26,7 +26,7 @@ frmtransaksiDiagnosa = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmtransaksiCatatanMedis = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmRegistrasi = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmInputTransaksiPelayanan = 0, 0, 0, 0, C, 182, 182, 1069, 624, C
-frmInputTransaksiDiagnosa = 78, 78, 965, 520, Z, 52, 52, 939, 494, C
+frmInputTransaksiDiagnosa = 78, 78, 965, 520, , 52, 52, 939, 494, C
 frmInputTransferPasien = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmLogin = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmInputTransaksiObat = 0, 0, 0, 0, C, 0, 0, 0, 0, C
