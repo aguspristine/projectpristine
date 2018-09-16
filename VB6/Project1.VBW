@@ -27,6 +27,7 @@ frmtransaksiCatatanMedis = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmRegistrasi = 156, 156, 1446, 780, C, 130, 130, 1420, 754, C
 frmInputTransaksiDiagnosa = 0, 0, 0, 0, C, 234, 234, 1524, 858, C
 frmInputTransferPasien = 0, 0, 0, 0, C, 156, 156, 1446, 780, C
+frmInputTransferPasien = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmLogin = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 frmInputTransaksiObat = 0, 0, 0, 0, C, 52, 52, 1389, 702, C
 frmUserPreparation = 0, 0, 0, 0, C, 0, 0, 0, 0, C
